@@ -10,7 +10,7 @@ function createDiv() {
 function CreateBlock() {
   this.newDiv = document.createElement('div');
   this.butt = document.createElement('button');
-  this.butt.onclick = gurevich.bind(this);
+  this.butt.onclick = makeLine.bind(this);
   this.newDiv.className = 'windows';
   this.newDiv.innerHTML = 'block';
   this.newDiv.onmousedown = move;
@@ -18,7 +18,7 @@ function CreateBlock() {
   this.newDiv.appendChild(this.butt);
 }
 
-function gurevich() {
+function makeLine() {
 	this.newDiv.onmousedown = start.bind(this);
 	
 }
