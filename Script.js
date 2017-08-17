@@ -27,7 +27,6 @@ function start() {
 	var box = this.newDiv.getBoundingClientRect();
 	var shiftX = event.clientX - box.left;
 	var shiftY = event.clientY - box.top;
-	console.log(shiftX + '    ' + shiftY);
 	array.forEach(function(obj) {
 		obj.newDiv.onmousedown = finish.bind(obj);
 	});
@@ -39,10 +38,6 @@ function start() {
 }
 
 function finish() {
-	console.log(finish.shiftX);
-	console.log(finish.shiftY);
-	console.log(finish.start);
-	console.log(this);
 	var box = this.newDiv.getBoundingClientRect();
 	var shiftX = event.clientX - box.left;
 	var shiftY = event.clientY - box.top;
