@@ -3,11 +3,11 @@ var array = [];
 var lines = [];
 
 function createDiv() {
-	array.push(new Jopa);
+	array.push(new CreateBlock);
 }
 
 
-function Jopa() {
+function CreateBlock() {
   this.newDiv = document.createElement('div');
   this.butt = document.createElement('button');
   this.butt.onclick = gurevich.bind(this);
