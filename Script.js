@@ -11,8 +11,8 @@ function CreateBlock() {
   this.newDiv = document.createElement('div');
   this.butt = document.createElement('button');
   this.butt.onclick = makeLine.bind(this);
+  this.butt.className = 'button';
   this.newDiv.className = 'windows';
-  this.newDiv.innerHTML = 'block';
   this.newDiv.onmousedown = move;
   document.body.appendChild(this.newDiv);
   this.newDiv.appendChild(this.butt);
@@ -20,7 +20,6 @@ function CreateBlock() {
 
 function makeLine() {
 	this.newDiv.onmousedown = start.bind(this);
-	
 }
 
 function start() {
@@ -34,7 +33,6 @@ function start() {
 	finish.shiftY = shiftY;
 	finish.start = this;
 	this.newDiv.onemousedown = null;
-	
 }
 
 function finish() {
@@ -48,17 +46,15 @@ function finish() {
 }
 
 function move() {
-	var cont = document;
-  var box = this.getBoundingClientRect();
-  var shiftX = event.clientX - box.left;
-  var shiftY = event.clientY - box.top;
+    var cont = document;
+    var box = this.getBoundingClientRect();
+    var shiftX = event.clientX - box.left;
+    var shiftY = event.clientY - box.top;
   	cont.onmousemove = mover.bind(this);
-
 
 function mover() {
 	this.style.left = event.clientX - shiftX + 'px';
 	this.style.top = event.clientY - shiftY + 'px';
-  
 }
 
 cont.onmouseup = function() {
@@ -108,8 +104,8 @@ function moveLine(obj) { // перемещение связей
 	sideA = sideB = hypotenuse/2; // стороны треугольника две
 	sideC = 2 * sideA * Math.sin(angle/2 * Math.PI / 180); // третья сторона
   
-	heightOfTriangle = sideB * Math.sin(angle * Math.PI / 180); // высота, мать ее
+	heightOfTriangle = sideB * Math.sin(angle * Math.PI / 180); // высота
 	offsetToLeft = Math.sqrt(sideC*sideC - heightOfTriangle*heightOfTriangle); // смещение влево
-	obj.line.style.top = lineFromTop + heightOfTriangle + 'px'; // .!.
-	obj.line.style.left = lineFromLeft - offsetToLeft + 'px'; // .!.
+	obj.line.style.top = lineFromTop + heightOfTriangle + 'px'; // отступ сверху
+	obj.line.style.left = lineFromLeft - offsetToLeft + 'px'; // отступ слева
 }

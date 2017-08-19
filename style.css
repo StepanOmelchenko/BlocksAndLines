@@ -1,17 +1,23 @@
 body {
-  background: black;
+    background: black;
 }
 
 .windows {
-  background: orange;
-  width: 50px;
-  height: 50px;
-  position: absolute;
+    background: orange;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
 }
 
 .lines {
 	background: red;
 	width: 1px;
-	height: 1px;
+	height: 5px;
 	position: absolute;
+}
+
+.button {
+    width: 30%;
+    height: 20%;
 }
