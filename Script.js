@@ -8,14 +8,14 @@ function createDiv() {
 
 
 function CreateBlock() {
-  this.newDiv = document.createElement('div');
-  this.butt = document.createElement('button');
-  this.butt.onclick = makeLine.bind(this);
-  this.butt.className = 'button';
-  this.newDiv.className = 'windows';
-  this.newDiv.onmousedown = move;
-  document.body.appendChild(this.newDiv);
-  this.newDiv.appendChild(this.butt);
+    this.newDiv = document.createElement('div');
+    this.butt = document.createElement('button');
+    this.butt.onclick = makeLine.bind(this);
+    this.butt.className = 'button';
+    this.newDiv.className = 'windows';
+    this.newDiv.onmousedown = move;
+    document.body.appendChild(this.newDiv);
+    this.newDiv.appendChild(this.butt);
 }
 
 function makeLine() {
