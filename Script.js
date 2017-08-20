@@ -94,12 +94,13 @@ function moveLine(obj) { // перемещение связей
 	catheterX = lineToLeft - lineFromLeft;
 	catheterY = lineToTop - lineFromTop; 
 	hypotenuse = Math.sqrt(catheterX*catheterX + catheterY*catheterY); // длина палки
-	obj.line.style.width = hypotenuse + 'px'; 
-	if ( catheterX >= 0) {
-		angle = Math.atan(1/(catheterX/catheterY)) * (180/Math.PI);
-	} else {
-		angle = Math.atan(1/(catheterX/catheterY)) * (180/Math.PI) + 180;
+	obj.line.style.width = hypotenuse + 'px';
+
+    angle = Math.atan(1/(catheterX/catheterY)) * (180/Math.PI); // выщитываем угол
+	if ( catheterX < 0) {
+		angle += 180;
 	}
+
 	obj.line.style.transform = 'rotateZ(' + angle + 'deg)';
 	sideA = sideB = hypotenuse/2; // стороны треугольника две
 	sideC = 2 * sideA * Math.sin(angle/2 * Math.PI / 180); // третья сторона
