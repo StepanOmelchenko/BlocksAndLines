@@ -96,7 +96,7 @@ function moveLine(obj) { // перемещение связей
 	hypotenuse = Math.sqrt(catheterX*catheterX + catheterY*catheterY); // длина палки
 	obj.line.style.width = hypotenuse + 'px';
 
-    angle = Math.atan(1/(catheterX/catheterY)) * (180/Math.PI); // выщитываем угол
+    angle = Math.atan(1/(catheterX/catheterY)) * (180/Math.PI); // вычисляем угол
 	if ( catheterX < 0) {
 		angle += 180;
 	}
